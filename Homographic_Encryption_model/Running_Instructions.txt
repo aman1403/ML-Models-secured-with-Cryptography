@@ -1,0 +1,46 @@
+**Please make sure all the libraries mentioned in the requirements.txt are properly installed**
+Please follow these two steps mentioned below:-
+
+Step1:- 
+	In First terminal Run Server:- 
+	These are the commands:-
+					export FLASK_APP=server.py
+					flask run --port 8000
+
+	In Second terminal Run Client1:- 
+					export FLASK_APP=client1.py
+					flask run --port 5001
+
+	Similary for running Client2:- 
+					export FLASK_APP=client2.py
+					flask run --port 5002
+	......
+	......
+	......
+	......
+
+	Similary for running Client10:- 
+					export FLASK_APP=client10.py
+					flask run --port 5010
+			
+	In General:- 
+					export FLASK_APP=clientk.py  
+					flask run --port 50k
+					
+					where k is the client number mentioned on the client file(clientk.py).
+				
+	For Running malicious client:- 
+					export FLASK_APP=malicious_client.py
+					flask run --port 5000
+					
+
+Step2:- 
+	In browser:-
+	Client1			Open http://localhost:5001
+	Client2			Open http://localhost:5002
+	......					......
+	......					......
+	......					......
+	......					......
+	Client10			Open http://localhost:5010
+

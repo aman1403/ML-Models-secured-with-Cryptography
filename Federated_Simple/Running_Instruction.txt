@@ -1,0 +1,9 @@
+**Please make sure all the libraries mentioned in the requirements.txt are properly installed**
+1st terminal
+python3 server.py
+
+2nd terminal
+python3 client1.py
+
+3rd terminal
+python3 client2.py

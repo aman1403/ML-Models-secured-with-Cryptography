@@ -1,0 +1,94 @@
+**Please make sure all the libraries mentioned in the requirements.txt are properly installed**
+Then follow the below commands:-
+1st terminal
+export FLASK_APP=client0.py
+export data="223"
+export peers="http://127.0.0.1:5001 http://127.0.0.1:5002"
+export myaddress="http://127.0.0.1:5000"
+export honest="yes"
+flask run --port 5000
+
+2nd terminal
+export FLASK_APP=client1.py
+export data="223"
+export peers="http://127.0.0.1:5000 http://127.0.0.1:5002"
+export myaddress="http://127.0.0.1:5001"
+export honest="no"
+flask run --port 5001
+
+3rd terminal
+export FLASK_APP=client2.py
+export data="223"
+export peers="http://127.0.0.1:5000 http://127.0.0.1:5001"
+export myaddress="http://127.0.0.1:5002"
+export honest="yes"
+flask run --port 5002
+
+4th terminal
+export FLASK_APP=server.py
+export peers="http://127.0.0.1:5000 http://127.0.0.1:5001 http://127.0.0.1:5002"
+export myaddress="http://127.0.0.1:8000"
+flask run --port 8000
+
+5 terminal
+curl -X GET http://127.0.0.1:5000/send_data &
+curl -X GET http://127.0.0.1:5001/send_data &
+curl -X GET http://127.0.0.1:5002/send_data &
+
+
+
+For more number of clients:
+Close the 4th and 5th terminal first and then follow below steps:-
+
+6th terminal
+export FLASK_APP=client0.py
+export data="224"
+export peers="http://127.0.0.1:5004 http://127.0.0.1:5005"
+export myaddress="http://127.0.0.1:5003"
+export honest="yes"
+flask run --port 5003
+
+7th terminal
+export FLASK_APP=client1.py
+export data="224"
+export peers="http://127.0.0.1:5003 http://127.0.0.1:5005"
+export myaddress="http://127.0.0.1:5004"
+export honest="yes"
+flask run --port 5004
+
+.............................
+............................
+............................
+.............................
+...............................
+
+
+nth terminal
+export FLASK_APP=clientn.py
+export data="224"
+export peers="http://127.0.0.1:500n-2 http://127.0.0.1:500n-1"
+export myaddress="http://127.0.0.1:500n"
+export honest="yes"
+flask run --port 5005
+
+4th terminal
+curl -X GET http://127.0.0.1:5000/send_data &
+curl -X GET http://127.0.0.1:5001/send_data &
+curl -X GET http://127.0.0.1:5002/send_data &
+.............................................
+.............................................
+.............................................
+curl -X GET http://127.0.0.1:500n/send_data &
+
+5th terminal
+export FLASK_APP=server.py
+export peers="http://127.0.0.1:5000 http://127.0.0.1:5001 http://127.0.0.1:5002 http://127.0.0.1:5003 ...... http://127.0.0.1:500n"
+export myaddress="http://127.0.0.1:8000"
+flask run --port 8000
+
+Similarly we can add as many clients as we want in our system
+
+At Anytime check Peers:
+Check peers and data: curl -X GET http://127.0.0.1:5000/get_peers
+curl -X GET http://127.0.0.1:5001/get_peers
+curl -X GET http://127.0.0.1:5002/get_peers

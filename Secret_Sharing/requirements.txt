@@ -1,0 +1,10 @@
+Install Libraries:
+0. python3
+1. numpy
+2. flask
+3. requests
+4. Pyfhel
+5. pathlib
+6. json
+7. pandas
+8. pickle

@@ -1,0 +1,7 @@
+0. python3 should be installed on your system. 
+Install Libraries:
+1. numpy
+2. pandas
+3. pickle
+4. socket
+5. math
